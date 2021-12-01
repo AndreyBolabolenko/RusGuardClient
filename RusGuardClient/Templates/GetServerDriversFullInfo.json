@@ -1,0 +1,15 @@
+{
+  "GetServerDriversFullInfo": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+
+    "serverID": "",
+    "workplaceModuleId": {
+      "_attributes": {
+        "i:nil": "true",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    }
+  }
+}

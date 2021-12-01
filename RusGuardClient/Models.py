@@ -126,3 +126,121 @@ class EmployeePassageNotification:
 
             except Exception:
                 raise TypeError("type xml.etree.ElementTree.Element only")
+
+
+class LogMessageTypeSlimInfo:
+    LogMesssageType = str
+    Name = str
+    OrderNumber = int
+    Publish = bool
+
+    _namespace = "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log"
+
+    def __init__(self, document):
+        if isinstance(document, Element):
+            try:
+                for element in document:
+                    tag = element.tag.replace("{"+self._namespace+"}", "")
+                    setattr(self, tag, element.text)
+
+            except Exception:
+                raise TypeError("type xml.etree.ElementTree.Element only")
+
+
+class LogMessageSubtypeSlimInfo:
+    LogMessageSubtype = str
+    LogMesssageType = str
+    Name = str
+    OrderNumber = int
+    Publish = bool
+
+    _namespace = "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log"
+
+    def __init__(self, document):
+        if isinstance(document, Element):
+            try:
+                for element in document:
+                    tag = element.tag.replace("{"+self._namespace+"}", "")
+                    setattr(self, tag, element.text)
+            except Exception:
+                raise TypeError("type xml.etree.ElementTree.Element only")
+
+
+class LNetInfo:
+    GatewayUrl: str
+    Id = str
+    IsAttached = bool
+
+    _namespace = "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity"
+
+    def __init__(self, document):
+        if isinstance(document, Element):
+            try:
+                for element in document:
+                    tag = element.tag.replace("{"+self._namespace+"}", "")
+                    setattr(self, tag, element.text)
+            except Exception:
+                raise TypeError("type xml.etree.ElementTree.Element only")
+
+
+class LServerInfo:
+    Id = str
+    IdNet = str
+    IsAttached = str
+    ServerType = str
+    Url = str
+
+    _namespace = "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity"
+
+    def __init__(self, document):
+        if isinstance(document, Element):
+            try:
+                for element in document:
+                    tag = element.tag.replace("{"+self._namespace+"}", "")
+                    setattr(self, tag, element.text)
+            except Exception:
+                raise TypeError("type xml.etree.ElementTree.Element only")
+
+
+class LDriverFullInfo:
+    DeviceServerId = str
+    Id = str
+    ParentId = str
+
+    DriverType = str
+
+    IsActive = bool
+    IsUnknownID = bool
+
+    Name = str
+    ParentPropertyName = str
+
+    Properties = None
+
+    State = str
+    States = None
+
+    _namespace = "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity"
+
+    def __init__(self, document):
+        if isinstance(document, Element):
+            self.Properties = {}
+            self.States = {}
+            for element in document:
+                tag = element.tag.replace("{"+self._namespace+"}", "")
+
+                if tag == "Properties":
+                    for sub_element in element:
+                        key = sub_element.find("{"+self._namespace+"}PropertyName").text
+                        value = sub_element.find("{"+self._namespace+"}Value").text
+                        self.Properties[key] = value
+                    continue
+
+                if tag == "States":
+                    for sub_element in element:
+                        key = sub_element.find("{"+self._namespace+"}PropertyName").text
+                        value = sub_element.find("{"+self._namespace+"}Value").text
+                        self.States[key] = value
+                    continue
+
+                setattr(self, tag, element.text)

@@ -1,7 +1,7 @@
 import base64
 from xml.etree.ElementTree import fromstring, iterparse
 from xml.dom.minidom import Document, Element
-from RusGuardClient.Models import LogMessage, Messages, EmployeePassageNotification
+from RusGuardClient.Models import *
 
 from io import StringIO
 import logging
@@ -189,3 +189,85 @@ def GetFilteredEvents(message: str):
     )
     list_messages = Messages(events, namespace)
     return list_messages.LogMessages
+
+
+def GetLogMessageTypes(message: str):
+    namespace = get_namespaces(message)
+    LogMessageResult = fromstring(message).find(
+        "s:Body/{http://www.rusguardsecurity.ru}GetLogMessageTypesResponse/"
+        "{http://www.rusguardsecurity.ru}GetLogMessageTypesResult",
+        namespace
+    )
+
+    LogsMessageSlimInfo = []
+    for element in LogMessageResult:
+        LogsMessageSlimInfo.append(
+            LogMessageTypeSlimInfo(element)
+        )
+
+    return LogsMessageSlimInfo
+
+
+def GetLogMessageSubtypes(message: str):
+    namespace = get_namespaces(message)
+    LogMessageResult = fromstring(message).find(
+        "s:Body/{http://www.rusguardsecurity.ru}GetLogMessageSubtypesResponse/"
+        "{http://www.rusguardsecurity.ru}GetLogMessageSubtypesResult",
+        namespace
+    )
+
+    LogsMessageSubtypeSlimInfo = []
+    for element in LogMessageResult:
+        LogsMessageSubtypeSlimInfo.append(
+            LogMessageSubtypeSlimInfo(element)
+        )
+
+    return LogsMessageSubtypeSlimInfo
+
+
+def GetAllNets(message: str):
+    namespace = get_namespaces(message)
+    GetAllNetsResult = fromstring(message).find(
+        "s:Body/{http://www.rusguardsecurity.ru}GetAllNetsResponse/"
+        "{http://www.rusguardsecurity.ru}GetAllNetsResult",
+        namespace
+    )
+
+    return LNetInfo(
+        GetAllNetsResult.find("a:LNetInfo", namespace)
+    )
+
+
+def GetNetServers(message: str):
+    namespace = get_namespaces(message)
+    GetNetServersResult = fromstring(message).find(
+        "s:Body/{http://www.rusguardsecurity.ru}GetNetServersResponse/"
+        "{http://www.rusguardsecurity.ru}GetNetServersResult",
+        namespace
+    )
+
+    Servers = []
+    for element in GetNetServersResult:
+        Servers.append(
+            LServerInfo(element)
+        )
+
+    return Servers
+
+
+def GetServerDriversFullInfo(message: str):
+    namespace = get_namespaces(message)
+    GetServerDriversFullInfoResult = fromstring(message).find(
+        "s:Body/{http://www.rusguardsecurity.ru}GetServerDriversFullInfoResponse/"
+        "{http://www.rusguardsecurity.ru}GetServerDriversFullInfoResult",
+        namespace
+    )
+
+    LDriversFullInfo = []
+
+    for element in GetServerDriversFullInfoResult:
+        LDriversFullInfo.append(
+            LDriverFullInfo(element)
+        )
+
+    return LDriversFullInfo

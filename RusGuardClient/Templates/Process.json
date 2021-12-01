@@ -1,0 +1,38 @@
+{
+  "Process": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+
+    "operation": {
+      "_attributes": {
+        "i:type": "a:DeviceCallMethodOperation",
+        "xmlns:a": "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.Net.Services.Entities",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "a:Path": {
+        "_attributes": {
+          "xmlns:b": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+        }
+      },
+      "a:UserID": {
+        "_attributes": {
+          "i:nil": "true"
+        }
+      },
+      "a:Id": "",
+      "a:LogMessageId": {
+        "_attributes": {
+          "i:nil": "true"
+        }
+      },
+      "a:MethodArgs": {
+        "_attributes": {
+          "xmlns:b": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+        },
+        "a:MethodName": ""
+      }
+    },
+    "connectionId": ""
+  }
+}
