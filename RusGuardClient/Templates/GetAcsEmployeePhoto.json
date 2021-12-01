@@ -1,0 +1,9 @@
+{
+  "GetAcsEmployeePhoto": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+    "employeeId": "",
+    "photoNumber": 1
+  }
+}

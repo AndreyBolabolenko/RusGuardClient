@@ -1,0 +1,56 @@
+{
+  "GetFilteredEvents": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+    "fromMessageId": "0",
+    "fromDateTime": "2021-10-01T00:00:00+08:00",
+    "toDateTime": "2021-10-01T23:59:59+08:00",
+    "msgTypes": {
+      "_attributes": {
+        "i:nil": "true",
+        "xmlns:a": "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    },
+    "msgSubTypes": {
+      "_attributes": {
+        "xmlns:a": "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "a:LogMsgSubType": "AccessPointEntryByKey"
+    },
+    "deviceIDs": {
+      "_attributes": {
+        "xmlns:a": "http://schemas.microsoft.com/2003/10/Serialization/Arrays",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "a:guid": "1672cdd3-ff3b-4964-89d6-6385f77eca76"
+    },
+    "subjectIDs": {
+      "_attributes": {
+        "xmlns:a": "http://schemas.microsoft.com/2003/10/Serialization/Arrays",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    },
+
+    "subjectType": "Employee",
+    "pageNumber": "0",
+    "pageSize": "200",
+
+    "sortedColumn": "DateTime",
+    "sortOrder": "Descending",
+    "isShowEventsWithRelatedData": "false",
+    "subjectIDs2": {
+      "_attributes": {
+        "xmlns:a": "http://schemas.microsoft.com/2003/10/Serialization/Arrays",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "a:guid": "60b4d07c-974a-4ad1-8fa4-0c320354e1f7"
+    },
+    "subjectType2": "EmployeeGroup",
+    "isShowRemovedEmployes": "false",
+    "isEmptyConsider": "true",
+    "isReturnLogCount": "true"
+  }
+}

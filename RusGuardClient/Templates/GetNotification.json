@@ -1,0 +1,9 @@
+{
+  "GetNotification": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+
+    "connectionId": ""
+  }
+}

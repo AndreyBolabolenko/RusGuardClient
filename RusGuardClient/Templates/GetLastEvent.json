@@ -1,0 +1,31 @@
+{
+  "GetLastEvent": {
+    "_attributes": {
+      "xmlns": "http://www.rusguardsecurity.ru"
+    },
+
+    "msgTypes": {
+      "_attributes": {
+        "i:nil": "true",
+        "xmlns:a": "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    },
+
+    "msgSubTypes": {
+      "_attributes": {
+        "i:nil": "true",
+        "xmlns:a": "http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.Log",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    },
+
+    "subjectIDs": {
+      "_attributes": {
+        "i:nil": "true",
+        "xmlns:a": "http://schemas.microsoft.com/2003/10/Serialization/Arrays",
+        "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance"
+      }
+    }
+  }
+}
